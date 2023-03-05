@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Soap\AppSettings\AppSettings
  */
-class AppSetting extends Facade
+class AppSettings extends Facade
 {
     protected static function getFacadeAccessor()
     {
