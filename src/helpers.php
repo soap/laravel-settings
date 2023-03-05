@@ -1,11 +1,9 @@
 <?php
 
 if (! function_exists('settings')) {
-
     /**
      * Get app setting stored in db.
      *
-     * @param $key
      * @param  null  $default
      * @return mixed
      */
@@ -21,6 +19,6 @@ if (! function_exists('settings')) {
             return $setting->set($key);
         }
 
-        return $setting->get($key, value($default));
+        return $setting->get($key, $default);
     }
 }

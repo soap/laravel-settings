@@ -27,7 +27,6 @@ interface ISettingStorage
     /**
      * Check if setting with key exists.
      *
-     * @param $key
      * @return bool
      */
     public function has($key);
@@ -44,7 +43,6 @@ interface ISettingStorage
     /**
      * Remove a setting from storage.
      *
-     * @param $key
      * @return mixed
      */
     public function remove($key);

@@ -16,7 +16,7 @@
     backupStaticProperties="false"
 >
     <testsuites>
-        <testsuite name="Soap Test Suite">
+        <testsuite name="Soap AppSettings Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
