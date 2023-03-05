@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Soap\AppSettings\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class AppSettingsCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-app-settings';
 
     public $description = 'My command';
 
