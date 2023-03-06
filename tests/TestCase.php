@@ -2,15 +2,23 @@
 
 namespace Soap\AppSettings\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Soap\AppSettings\AppSettingsServiceProvider;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class TestCase extends Orchestra
 {
+    use DatabaseMigrations;
+
     protected function setUp(): void
     {
         parent::setUp();
+
+        $this->artisan('migrate', [
+            '--force' => true,
+            '--path' => __DIR__ . '/../database/migrations',
+            '--realpath' => true,
+        ])->run();
 
     }
 
@@ -41,8 +49,7 @@ class TestCase extends Orchestra
             'prefix' => '',
         ]);
 
-        $migration = include __DIR__.'/../database/migrations/create_app_settings_table.php';
-        $migration->up();
+        config()->set('app-settings.table', 'settings');
 
     }
 }

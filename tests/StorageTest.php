@@ -13,7 +13,7 @@ class StorageTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * @var SettingEloquentStorage
+     * @var EloqueentSettingStorage
      */
     protected $settingStorage;
 

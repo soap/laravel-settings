@@ -21,5 +21,14 @@ class AppSettingsServiceProvider extends PackageServiceProvider
             ->hasMigration('create_app_settings_table');
     }
 
+    public function packageRegistered()
+    {
+        // bind setting storage
+        $this->app->bind(
+            'Soap\AppSettings\ISettingStorage',
+            'Soap\AppSettings\EloquentSettingStorage'
+        );   
+    }
+
 
 }
