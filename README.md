@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/soap/laravel-app-settings/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/soap/laravel-app-settings/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/soap/laravel-app-settings.svg?style=flat-square)](https://packagist.org/packages/soap/laravel-app-settings)
 
-This package lets to save and store application settings in database.
+This package lets you save and store application settings in database. 
 
 This package is 95% fork from [qcod/laravel-settings](https://github.com/qcod/laravel-settings). I made this one to acheive some goals that I cannot do with original package.
 
@@ -39,8 +39,8 @@ return [
 ```
 
 ## Usage
-You can use helper function settings('app_name') or Settings::get('app_name') to use laravel settings.
-# Available methods
+You can use helper function `settings('app_name')` or `Settings::get('app_name')` to use laravel settings.
+### Available methods
 ```php
 // Pass `true` to ignore cached settings
 settings()->all($fresh = false);
