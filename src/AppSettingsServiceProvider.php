@@ -26,8 +26,6 @@ class AppSettingsServiceProvider extends PackageServiceProvider
         $this->app->bind(
             'Soap\AppSettings\ISettingStorage',
             'Soap\AppSettings\EloquentSettingStorage'
-        );   
+        );
     }
-
-
 }
