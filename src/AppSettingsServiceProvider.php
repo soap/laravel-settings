@@ -2,7 +2,6 @@
 
 namespace Soap\AppSettings;
 
-use Soap\AppSettings\Commands\AppSettingsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -20,6 +19,4 @@ class AppSettingsServiceProvider extends PackageServiceProvider
             ->hasConfigFile('app-settings')
             ->hasMigration('create_app_settings_table');
     }
-
-
 }

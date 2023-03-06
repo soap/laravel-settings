@@ -1,12 +1,10 @@
 <?php
 
-
 namespace Soap\AppSettings\Tests;
 
-use Soap\AppSettings\Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Soap\AppSettings\AppSetting;
 use Soap\AppSettings\EloquentSettingStorage;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class StorageTest extends TestCase
 {
@@ -138,7 +136,7 @@ class StorageTest extends TestCase
         $this->settingStorage->set([
             'app_name' => 'Laravel',
             'app_email' => 'info@email.com',
-            'app_type' => 'SaaS'
+            'app_type' => 'SaaS',
         ]);
 
         $this->assertCount(3, $this->settingStorage->all());
@@ -187,7 +185,7 @@ class StorageTest extends TestCase
         $this->assertDatabaseHas('settings', [
             'name' => 'app_name',
             'val' => 'Cool App',
-            'group' => 'default'
+            'group' => 'default',
         ]);
     }
 
@@ -203,7 +201,7 @@ class StorageTest extends TestCase
         $this->assertDatabaseHas('settings', [
             'name' => 'app_name',
             'val' => 'Cool App',
-            'group' => 'set1'
+            'group' => 'set1',
         ]);
     }
 
