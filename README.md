@@ -39,7 +39,7 @@ php artisan migrate
 ```
 
 ## Usage
-You can use helper function `settings('app_name')` or `Settings::get('app_name')` to use laravel settings.
+You can use helper function `settings('app_name')` or `AppSettings::get('app_name')` to use laravel settings. The later is via Facacde.
 ### Available methods
 ```php
 // Pass `true` to ignore cached settings
