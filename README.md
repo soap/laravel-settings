@@ -17,17 +17,10 @@ You can install the package via composer:
 composer require soap/laravel-app-settings
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-app-settings-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-app-settings-config"
+php artisan vendor:publish --tag="app-settings-config"
 ```
 
 This is the contents of the published config file:
@@ -36,6 +29,13 @@ This is the contents of the published config file:
 return [
     'table' => 'app_settings',
 ];
+```
+You can change table name used to store application settings.
+Then you can publish and run the migrations with:
+
+```bash
+php artisan vendor:publish --tag="app-settings-migrations"
+php artisan migrate
 ```
 
 ## Usage

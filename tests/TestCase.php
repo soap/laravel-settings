@@ -12,9 +12,6 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Soap\\AppSettings\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
     }
 
     protected function getPackageProviders($app)
@@ -24,13 +21,28 @@ class TestCase extends Orchestra
         ];
     }
 
+    /**
+     * @param \Illuminate\Foundation\Application $app
+     * @return array
+     */
+    protected function getPackageAliases($app)
+    {
+        return [
+            'AppSettings' => 'Soap\AppSettings\Facades\AppSettings'
+        ];
+    }
+
     public function getEnvironmentSetUp($app)
     {
         config()->set('database.default', 'testing');
+        config()->set('database.connections.testing', [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+            'prefix' => '',
+        ]);
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_laravel-app-settings_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_app_settings_table.php';
         $migration->up();
-        */
+
     }
 }

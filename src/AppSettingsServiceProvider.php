@@ -17,7 +17,9 @@ class AppSettingsServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('app-settings')
-            ->hasConfigFile()
+            ->hasConfigFile('app-settings')
             ->hasMigration('create_app_settings_table');
     }
+
+
 }
