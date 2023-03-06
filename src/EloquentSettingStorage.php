@@ -56,7 +56,7 @@ class EloquentSettingStorage implements ISettingStorage
 
             return true;
         }
-        /** @var \Soap\AppSettings\AppSetting  $setting */
+        /** @var \Soap\AppSettings\AppSetting $setting */
         $setting = $this->getSettingModel()->firstOrNew([
             'name' => $key,
             'group' => $this->settingsGroupName,
@@ -126,8 +126,8 @@ class EloquentSettingStorage implements ISettingStorage
      */
     protected function modelQuery()
     {
-        /** 
-         * @method static \Soap\AppSettings\AppSetting<static> group() 
+        /**
+         * @method static \Soap\AppSettings\AppSetting<static> group()
          */
         return $this->getSettingModel()->group($this->settingsGroupName);
     }

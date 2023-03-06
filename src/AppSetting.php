@@ -4,7 +4,7 @@ namespace Soap\AppSettings;
 
 use Illuminate\Database\Eloquent\Model;
 
-/** 
+/**
  * @property int $id
  * @property string $name
  * @property string $val
@@ -15,10 +15,9 @@ class AppSetting extends Model
     protected $guarded = ['updated_at', 'id'];
 
     /**
-     * 
-     * @param mixed $query 
-     * @param mixed $groupName 
-     * @return mixed 
+     * @param  mixed  $query
+     * @param  mixed  $groupName
+     * @return mixed
      */
     public function scopeGroup($query, $groupName)
     {
@@ -27,6 +26,6 @@ class AppSetting extends Model
 
     public function getTable()
     {
-        return config('app-settings.table', 'settings');     
+        return config('app-settings.table', 'settings');
     }
 }
