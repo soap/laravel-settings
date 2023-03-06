@@ -49,12 +49,7 @@ class TestCase extends Orchestra
             'prefix' => '',
         ]);
 
-<<<<<<< HEAD
         config()->set('app-settings.table', 'settings');
 
-=======
-        $migration = include __DIR__.'/../database/migrations/create_app_settings_table.php';
-        $migration->up();
->>>>>>> e52408cddf6976f883c4924fb466af2d70f6bd5d
     }
 }
