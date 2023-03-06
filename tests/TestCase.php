@@ -14,12 +14,6 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        $this->artisan('migrate', [
-            '--force' => true,
-            '--path' => __DIR__ . '/../database/migrations',
-            '--realpath' => true,
-        ])->run();
-
     }
 
     protected function getPackageProviders($app)
@@ -30,13 +24,13 @@ class TestCase extends Orchestra
     }
 
     /**
-     * @param \Illuminate\Foundation\Application $app
+     * @param  \Illuminate\Foundation\Application  $app
      * @return array
      */
     protected function getPackageAliases($app)
     {
         return [
-            'AppSettings' => 'Soap\AppSettings\Facades\AppSettings'
+            'AppSettings' => 'Soap\AppSettings\Facades\AppSettings',
         ];
     }
 
@@ -49,7 +43,8 @@ class TestCase extends Orchestra
             'prefix' => '',
         ]);
 
-        config()->set('app-settings.table', 'settings');
+        $migration = include __DIR__.'/../database/migrations/create_app_settings_table.php';
+        $migration->up();
 
     }
 }
