@@ -2,9 +2,9 @@
 
 namespace Soap\AppSettings\Tests;
 
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Soap\AppSettings\AppSettingsServiceProvider;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class TestCase extends Orchestra
 {
@@ -16,10 +16,9 @@ class TestCase extends Orchestra
 
         $this->artisan('migrate', [
             '--force' => true,
-            '--path' => __DIR__ . '/../database/migrations',
+            '--path' => __DIR__.'/../database/migrations',
             '--realpath' => true,
         ])->run();
-
     }
 
     protected function getPackageProviders($app)
@@ -50,6 +49,5 @@ class TestCase extends Orchestra
         ]);
 
         config()->set('app-settings.table', 'settings');
-
     }
 }
