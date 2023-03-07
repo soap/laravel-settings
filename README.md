@@ -53,7 +53,7 @@ settings()->set($key, $value);
 
 // Set a multiple settings
 settings()->set([
-   'app_name' => 'QCode',
+   'app_name' => 'Laravel',
    'app_email' => 'info@email.com',
    'app_type' => 'SaaS'
 ]);
