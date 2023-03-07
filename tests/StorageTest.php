@@ -3,8 +3,8 @@
 namespace Soap\Settings\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Soap\Settings\Models\Setting;
 use Soap\Settings\EloquentSettingStorage;
+use Soap\Settings\Models\Setting;
 
 class StorageTest extends TestCase
 {
