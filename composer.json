@@ -1,12 +1,15 @@
 {
-    "name": "soap/laravel-app-settings",
+    "name": "soap/laravel-settings",
     "description": "Application settings storage and retrieval package",
     "keywords": [
         "soap",
         "laravel",
-        "laravel-app-settings"
+        "laravel-settings",
+        "elqoent", 
+        "settings",
+        "storage"
     ],
-    "homepage": "https://github.com/soap/laravel-app-settings",
+    "homepage": "https://github.com/soap/laravel-settings",
     "license": "MIT",
     "authors": [
         {
@@ -35,13 +38,13 @@
             "src/helpers.php"
         ],
         "psr-4": {
-            "Soap\\AppSettings\\": "src",
-            "Soap\\AppSettings\\Database\\Factories\\": "database/factories"
+            "Soap\\Settings\\": "src",
+            "Soap\\Settings\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Soap\\AppSettings\\Tests\\": "tests"
+            "Soap\\Settings\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -60,10 +63,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Soap\\AppSettings\\AppSettingsServiceProvider"
+                "Soap\\Settings\\SettingsServiceProvider"
             ],
             "aliases": {
-                "AppSettings": "Soap\\AppSettings\\Facades\\AppSettings"
+                "AppSettings": "Soap\\Settings\\Facades\\Settings"
             }
         }
     },

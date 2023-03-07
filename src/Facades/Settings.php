@@ -1,16 +1,16 @@
 <?php
 
-namespace Soap\AppSettings\Facades;
+namespace Soap\Settings\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \Soap\AppSettings\AppSettings
  */
-class AppSettings extends Facade
+class Settings extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Soap\AppSettings\EloquentSettingStorage::class;
+        return \Soap\Settings\EloquentSettingStorage::class;
     }
 }

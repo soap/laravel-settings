@@ -1,6 +1,6 @@
 <?php
 
-namespace Soap\AppSettings;
+namespace Soap\Settings\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $val
  * @property string $group
  */
-class AppSetting extends Model
+class Setting extends Model
 {
     protected $guarded = ['updated_at', 'id'];
 
@@ -26,6 +26,6 @@ class AppSetting extends Model
 
     public function getTable()
     {
-        return config('app-settings.table', 'settings');
+        return config('settings.table', 'settings');
     }
 }

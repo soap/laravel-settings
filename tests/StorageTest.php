@@ -1,10 +1,10 @@
 <?php
 
-namespace Soap\AppSettings\Tests;
+namespace Soap\Settings\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Soap\AppSettings\AppSetting;
-use Soap\AppSettings\EloquentSettingStorage;
+use Soap\Settings\Models\Setting;
+use Soap\Settings\EloquentSettingStorage;
 
 class StorageTest extends TestCase
 {
@@ -166,9 +166,9 @@ class StorageTest extends TestCase
      */
     public function it_can_access_setting_via_facade()
     {
-        \AppSettings::set('app_name', 'Cool App');
+        \Settings::set('app_name', 'Cool App');
 
-        $this->assertEquals('Cool App', \AppSettings::get('app_name'));
+        $this->assertEquals('Cool App', \Settings::get('app_name'));
 
         $this->assertDatabaseHas('settings', ['name' => 'app_name']);
     }
@@ -243,7 +243,7 @@ class StorageTest extends TestCase
         settings()->group('team1')->set('app_name', 'Cool App 1');
         settings()->group('team2')->set('app_name', 'Cool App 2');
 
-        $this->assertCount(2, AppSetting::all());
+        $this->assertCount(2, Setting::all());
         $this->assertEquals('Cool App 1', settings()->group('team1')->get('app_name'));
         $this->assertEquals('Cool App 2', settings()->group('team2')->get('app_name'));
     }
@@ -255,9 +255,9 @@ class StorageTest extends TestCase
      */
     public function it_get_group_settings_using_facade()
     {
-        \AppSettings::group('team1')->set('app_name', 'Cool App');
+        \Settings::group('team1')->set('app_name', 'Cool App');
 
-        $this->assertEquals('Cool App', \AppSettings::group('team1')->get('app_name'));
+        $this->assertEquals('Cool App', \Settings::group('team1')->get('app_name'));
 
         $this->assertDatabaseHas('settings', ['name' => 'app_name', 'group' => 'team1']);
     }

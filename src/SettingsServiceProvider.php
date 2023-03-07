@@ -1,11 +1,11 @@
 <?php
 
-namespace Soap\AppSettings;
+namespace Soap\Settings;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class AppSettingsServiceProvider extends PackageServiceProvider
+class SettingsServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -15,17 +15,17 @@ class AppSettingsServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('app-settings')
-            ->hasConfigFile('app-settings')
-            ->hasMigration('create_app_settings_table');
+            ->name('settings')
+            ->hasConfigFile('settings')
+            ->hasMigration('create_settings_table');
     }
 
     public function packageRegistered()
     {
         // bind setting storage
         $this->app->bind(
-            'Soap\AppSettings\ISettingStorage',
-            'Soap\AppSettings\EloquentSettingStorage'
+            'Soap\Settings\ISettingStorage',
+            'Soap\Settings\EloquentSettingStorage'
         );
     }
 }

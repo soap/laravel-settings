@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create(config('app-settings.table', 'settings'), function (Blueprint $table) {
+        Schema::create(config('settings.table', 'settings'), function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->text('val')->nullable();
@@ -19,6 +19,6 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists(config('app-settings.table', 'settings'));
+        Schema::dropIfExists(config('settings.table', 'settings'));
     }
 };

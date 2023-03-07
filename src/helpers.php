@@ -9,7 +9,7 @@ if (! function_exists('settings')) {
      */
     function settings($key = null, $default = null)
     {
-        $setting = app()->make('Soap\AppSettings\ISettingStorage');
+        $setting = app()->make('Soap\Settings\ISettingStorage');
 
         if (is_null($key)) {
             return $setting;

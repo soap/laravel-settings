@@ -1,45 +1,45 @@
 # Application settings storage and retrieval package
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/soap/laravel-app-settings.svg?style=flat-square)](https://packagist.org/packages/soap/laravel-app-settings)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/soap/laravel-app-settings/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/soap/laravel-app-settings/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/soap/laravel-app-settings/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/soap/laravel-app-settings/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/soap/laravel-app-settings.svg?style=flat-square)](https://packagist.org/packages/soap/laravel-app-settings)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/soap/laravel-settings.svg?style=flat-square)](https://packagist.org/packages/soap/laravel-settings)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/soap/laravel-settings/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/soap/laravel-settings/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/soap/laravel-settings/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/soap/laravel-settings/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/soap/laravel-settings.svg?style=flat-square)](https://packagist.org/packages/soap/laravel-settings)
 
 This package lets you save and store application settings in database. 
 
-This package is 95% fork from [qcod/laravel-settings](https://github.com/qcod/laravel-settings). I made this one to acheive some goals that I cannot do with original package.
+This package is 95% forked from [qcod/laravel-settings](https://github.com/qcod/laravel-settings). I made this one to acheive some goals that I cannot do with original package.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require soap/laravel-app-settings
+composer require soap/laravel-settings
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="app-settings-config"
+php artisan vendor:publish --tag="settings-config"
 ```
 
 This is the contents of the published config file:
 
 ```php
 return [
-    'table' => 'app_settings',
+    'table' => 'settings',
 ];
 ```
 You can change table name used to store application settings.
 Then you can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="app-settings-migrations"
+php artisan vendor:publish --tag="settings-migrations"
 php artisan migrate
 ```
 
 ## Usage
-You can use helper function `settings('app_name')` or `AppSettings::get('app_name')` to use laravel settings. The later is via Facacde.
+You can use helper function `settings('app_name')` or `Settings::get('app_name')` to use laravel settings. The later is via Facacde.
 ### Available methods
 ```php
 // Pass `true` to ignore cached settings

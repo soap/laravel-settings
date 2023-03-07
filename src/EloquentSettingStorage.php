@@ -1,6 +1,6 @@
 <?php
 
-namespace Soap\AppSettings;
+namespace Soap\Settings;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Cache;
@@ -56,7 +56,7 @@ class EloquentSettingStorage implements ISettingStorage
 
             return true;
         }
-        /** @var \Soap\AppSettings\AppSetting $setting */
+        /** @var \Soap\Settings\Models\Setting $setting */
         $setting = $this->getSettingModel()->firstOrNew([
             'name' => $key,
             'group' => $this->settingsGroupName,
@@ -112,11 +112,11 @@ class EloquentSettingStorage implements ISettingStorage
     /**
      * Get settings eloquent model.
      *
-     * @return \Soap\AppSettings\AppSetting
+     * @return \Soap\Settings\Models\Setting
      */
     protected function getSettingModel()
     {
-        return app(\Soap\AppSettings\AppSetting::class);
+        return app(\Soap\Settings\Models\Setting::class);
     }
 
     /**

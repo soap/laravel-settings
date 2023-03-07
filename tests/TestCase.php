@@ -1,10 +1,10 @@
 <?php
 
-namespace Soap\AppSettings\Tests;
+namespace Soap\Settings\Tests;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Soap\AppSettings\AppSettingsServiceProvider;
+use Soap\Settings\SettingsServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -24,7 +24,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            AppSettingsServiceProvider::class,
+            SettingsServiceProvider::class,
         ];
     }
 
@@ -35,7 +35,7 @@ class TestCase extends Orchestra
     protected function getPackageAliases($app)
     {
         return [
-            'AppSettings' => 'Soap\AppSettings\Facades\AppSettings',
+            'Settings' => 'Soap\Settings\Facades\Settings',
         ];
     }
 
@@ -48,6 +48,6 @@ class TestCase extends Orchestra
             'prefix' => '',
         ]);
 
-        config()->set('app-settings.table', 'settings');
+        config()->set('settings.table', 'settings');
     }
 }

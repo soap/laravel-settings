@@ -1,6 +1,6 @@
 <?php
 
-namespace Soap\AppSettings;
+namespace Soap\Settings;
 
 use Illuminate\Support\Collection;
 
